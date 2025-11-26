@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>验证码管理</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 600px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: white;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .unused td:first-child {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .used td:first-child {
+      background-color: #ffebee;
+      color: #c62828;
+      text-decoration: line-through;
+    }
+    .note {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 15px;
+      background: #e3f2fd;
+      border-radius: 6px;
+      color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 验证码管理表（管理员维护）</h1>
+
+  <table id="codeTable">
+    <thead>
+      <tr>
+        <th>验证码</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 管理员在此增删改验证码行 -->
+      <tr class="unused">
+        <td>123456</td>
+        <td>未使用</td>
+      </tr>
+      <tr class="unused">
+        <td>789012</td>
+        <td>未使用</td>
+      </tr>
+      <tr class="used">
+        <td>112233</td>
+        <td>已使用</td>
+      </tr>
+      <!-- 新验证码请加在这里，格式如下：
+      <tr class="unused">
+        <td>新验证码</td>
+        <td>未使用</td>
+      </tr>
+      -->
+    </tbody>
+  </table>
+
+  <div class="note">
+    <p><strong>📌 管理员操作指南：</strong></p>
+    <ol>
+      <li>点击右上角铅笔图标 ✏️ 可编辑此页面</li>
+      <li>在 <code>&lt;tbody&gt;</code> 中添加/删除验证码行</li>
+      <li>使用后，请手动将 <code>class="unused"</code> 改为 <code>class="used"</code></li>
+      <li>保存后刷新页面即可生效（全球实时同步）</li>
+    </ol>
+  </div>
+</body>
+</html>
